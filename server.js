@@ -69,7 +69,7 @@ app.get("/babies/seed", async (req, res) => {
 })
 
 //Index
-app.get("/babies/", async (req, res) => {
+app.get("/babies", async (req, res) => {
     try {
         res.json(await Babies.find({}))
     } catch (error) {
@@ -77,7 +77,7 @@ app.get("/babies/", async (req, res) => {
     }
 });
 //Create
-app.post("/babies/", async (req, res) => {
+app.post("/babies", async (req, res) => {
     try {
         res.json(await Babies.create(req.body))
     } catch (error) {
@@ -212,7 +212,7 @@ app.get("/feeding", async (req, res) => {
 })
 
 //Create
-app.post("/babies/:id/feeding/", async (req, res) => {
+app.post("/babies/:id/feeding", async (req, res) => {
     try {
         const id = req.params.id;
         const newFeeding =
