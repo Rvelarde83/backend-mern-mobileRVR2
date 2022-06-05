@@ -235,36 +235,6 @@ app.post("/babies/:id/feeding/", async (req, res) => {
 })
 
 
-//Show
-app.get("/feeding/:id", async (req, res) => {
-    try {
-        res.json(await Feeding.findById(req.params.id))
-    } catch (error) {
-        res.status(400).json(error)
-    }
-})
-
-
-
-//Delete
-app.delete("/feeding/:id", async (req, res) => {
-    try {
-        res.json(await Diapers.findByIdAndDelete(req.params.id))
-    } catch (error) {
-        res.status(400).json(error)
-    }
-})
-
-//Update Route
-app.put("/feeding/:id", async (req, res) => {
-    try {
-        res.json(await Feeding.findByIdAndUpdate(req.params.id, req.body)
-        ) // new:true is not required...
-    } catch (error) {
-        res.status(400).json(error)
-    }
-})
-
 
 
 //Listener
