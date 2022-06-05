@@ -45,16 +45,16 @@ app.use(express.urlencoded({ extended: true })) // parse html form bodies into r
 app.get("/", (req, res) => {
     res.send("Hello Bebés del Mundo Mundialón!")
 })
-//Babies Index Route
-app.get("/babies", async (req, res) => {
-    try {
-        //send all babies
-        res.json(await Babies.find({}))
-    } catch (error) {
-        //send error
-        res.status(400).json(error)
-    }
-})
+// //Babies Index Route
+// app.get("/babies", async (req, res) => {
+//     try {
+//         //send all babies
+//         res.json(await Babies.find({}))
+//     } catch (error) {
+//         //send error
+//         res.status(400).json(error)
+//     }
+// })
 
 //BABIES
 //SEED
