@@ -188,19 +188,19 @@ app.put("/babies/:id", async (req, res) => {
 // })
 
 
-///////////////////////////////////////////////////////////////////////////////
-// Feedings
+/////////////////////////////////////////////////////////////////////////////
+Feedings
 
-// app.get("/feeding/seed", async (req, res) => {
-//     //delete the peeps
-//     await Feeding.remove({}).catch((err) => res.send(err))
-//     //add your sample baby
-//     const feed = await Feeding.create([
-//         {
-//             user: "Mateo", milk: "breast milk", BreastTime: "7 min"
-//         }
-//     ]).catch((err) => res.send(err))
-//     res.json(feed)
+app.get("/feeding/seed", async (req, res) => {
+    //delete the peeps
+    await Feeding.remove({}).catch((err) => res.send(err))
+    //add your sample baby
+    const feed = await Feeding.create([
+        {
+            user: "Mateo", milk: "breast milk", BreastTime: "7 min"
+        }
+    ]).catch((err) => res.send(err))
+    res.json(feed)
 
 app.get("/feeding", async (req, res) => {
     try {
@@ -208,6 +208,7 @@ app.get("/feeding", async (req, res) => {
     } catch (error) {
         res.status(400).json(error)
     }
+})
 })
 
 //Create
@@ -232,6 +233,7 @@ app.post("/babies/:id/feeding/", async (req, res) => {
     }
 
 })
+
 
 //Show
 app.get("/feeding/:id", async (req, res) => {
