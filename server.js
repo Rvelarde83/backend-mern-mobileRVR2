@@ -101,7 +101,7 @@ app.get("/babies/:id", async (req, res) => {
 
 
 //Delete
-app.delete("/Babies/:id", async (req, res) => {
+app.delete("/babies/:id", async (req, res) => {
     try {
         res.json(await Babies.findByIdAndDelete(req.params.id))
     } catch (error) {
@@ -245,13 +245,24 @@ app.post("/babies/:id/feeding", async (req, res) => {
         res.json(newFeeding)
         await newFeeding.save();
         const babyRelated = await Babies.findById(id);
-        babyRelated.feeding.push(newFeeding)
+        babyRelated.Feeding.push(newFeeding)
         await babyRelated.save()
     } catch (error) {
         res.status(400).json(error)
     }
 
 })
+
+//Update Route
+app.put("/feeding/:id", async (req, res) => {
+    try {
+        res.json(await Feeding.findByIdAndUpdate(req.params.id, req.body)
+        ) // new:true is not required...
+    } catch (error) {
+        res.status(400).json(error)
+    }
+})
+
 
 //Create2
 app.post("/feeding", async (req, res) => {
