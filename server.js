@@ -211,6 +211,15 @@ app.get("/feeding", async (req, res) => {
 })
 })
 
+//normal index feeding: 
+app.get("/feeding", async (req, res) => {
+    try {
+        res.json(await Feeding.find({}))
+    } catch (error) {
+        res.status(400).json(error)
+    }
+})
+
 //Show
 app.get("/feeding/:id", async (req, res) => {
     try {
