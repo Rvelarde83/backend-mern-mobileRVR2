@@ -202,13 +202,13 @@ app.get("/feeding/seed", async (req, res) => {
     ]).catch((err) => res.send(err))
     res.json(feed)
 
-app.get("/feeding", async (req, res) => {
-    try {
-        res.json(await Feeding.find({}))
-    } catch (error) {
-        res.status(400).json(error)
-    }
-})
+// app.get("/feeding", async (req, res) => {
+//     try {
+//         res.json(await Feeding.find({}))
+//     } catch (error) {
+//         res.status(400).json(error)
+//     }
+// })
 })
 
 //normal index feeding: 
