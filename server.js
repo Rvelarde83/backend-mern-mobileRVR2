@@ -211,6 +211,16 @@ app.get("/feeding", async (req, res) => {
 })
 })
 
+//Show
+app.get("/feeding/:id", async (req, res) => {
+    try {
+        res.json(await Feeding.findById(req.params.id))
+    } catch (error) {
+        res.status(400).json(error)
+    }
+})
+
+
 //Create
 app.post("/babies/:id/feeding", async (req, res) => {
     try {
