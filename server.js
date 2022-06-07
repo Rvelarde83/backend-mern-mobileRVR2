@@ -256,7 +256,7 @@ app.post("/babies/:id/feeding", async (req, res) => {
 //Create2
 app.post("/feeding", async (req, res) => {
     try {
-        res.json(await Diapers.create(req.body))
+        res.json(await FEeding.create(req.body))
     } catch (error) {
         res.status(400).json(error)
     }
